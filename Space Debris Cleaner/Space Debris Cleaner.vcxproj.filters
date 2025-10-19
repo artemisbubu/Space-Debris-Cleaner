@@ -28,6 +28,9 @@
     <Filter Include="头文件\core\resource_manager">
       <UniqueIdentifier>{4e3605f1-7636-419c-999a-cfcd0c3b8496}</UniqueIdentifier>
     </Filter>
+    <Filter Include="源文件\core\resource_manager">
+      <UniqueIdentifier>{47999f7b-45c3-420a-a132-4c17f8484362}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,6 +47,9 @@
     </ClCompile>
     <ClCompile Include="segment.cpp">
       <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="texture_manager.cpp">
+      <Filter>源文件\core\resource_manager</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -80,5 +86,13 @@
     <ClInclude Include="static_data_manager.hpp">
       <Filter>头文件\core\resource_manager</Filter>
     </ClInclude>
+    <ClInclude Include="config_manager.hpp">
+      <Filter>头文件</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="config.json">
+      <Filter>资源文件</Filter>
+    </None>
   </ItemGroup>
 </Project>

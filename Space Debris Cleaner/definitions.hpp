@@ -12,14 +12,16 @@ namespace sdc {
 	* @enumclass 枚举实体类型
 	*/
 	enum class entity_type {
-		TRASH_A
+		TRASH_A,
+		SIZE
 	};
 
 	/**
 	* @enumclass 场景类型
 	*/
 	enum class scene_type {
-		SCENE_A
+		SCENE_A,
+		SIZE
 	};
 }
 

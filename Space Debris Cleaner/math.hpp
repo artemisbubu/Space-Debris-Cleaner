@@ -4,13 +4,15 @@
 #include "definitions.hpp"
 #include "coord.hpp"
 #include "polygon.hpp"
-#include <cmath>
 #include "segment.hpp"
+
+
+#include <cmath>
 
 namespace sdc {
 	namespace math {
 		/** @cvar 圆周率值*/
-		const float PI = 3.1415927f;
+		const float PI_VAL = 3.1415927f;
 
 		/** @cvar 容差 */
 		const float EPS = 1e-6f;
@@ -31,7 +33,7 @@ namespace sdc {
 			const sdc::coord point,
 			const float rotation
 		)noexcept {
-			float rad = rotation * sdc::math::PI / sdc::math::DEG_180;
+			float rad = rotation * sdc::math::PI_VAL / sdc::math::DEG_180;
 
 			float dx = point.x - center.x;
 			float dy = point.y - center.y;
@@ -48,7 +50,7 @@ namespace sdc {
 
 		/**
 		* @brief	绕center旋转point点rotation度（角度），得到的point'坐标
-		* @input	sdc::coord> center	中心坐标
+		* @input	sdc::coord center	中心坐标
 		*			const std::vector<sdc::coord>& point_s	旋转的点坐标
 		*			const float	rotation	旋转角度
 		* @return	void
@@ -59,7 +61,7 @@ namespace sdc {
 			sdc::polygon& polygon,
 			const float rotation
 		) noexcept {
-			const float rad = rotation * sdc::math::PI / sdc::math::DEG_180;
+			const float rad = rotation * sdc::math::PI_VAL / sdc::math::DEG_180;
 			const float cos_r = std::cos(rad);
 			const float sin_r = std::sin(rad);
 

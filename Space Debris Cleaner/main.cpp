@@ -1,33 +1,33 @@
-#include "definitions.hpp"
-#include "raylib.h"
-#include "entity.hpp"
-#include <chrono>
-#include "segment.hpp"
-#include <iostream>
-int main(void)
-{
-    //// ÉèÖÃ´°¿ÚÎª¿Éµ÷Õû´óĞ¡
-    //SetConfigFlags(FLAG_WINDOW_RESIZABLE);
-    //// ³õÊ¼»¯´°¿Ú
-    //InitWindow(
-    //    sdc::GM_WIN_INIT_WIDTH,
-    //    sdc::GM_WIN_INIT_HEIGHT,    // ÉèÖÃ´°¿Ú³õÊ¼´óĞ¡
-    //    "Space Debris Cleaner"      // ´°¿ÚÃû³Æ
-    //);
-    //// ÉèÖÃÄ¿±êFPS
-    //SetTargetFPS(60);
-    //// Ö÷Ñ­»·
-    //while (!WindowShouldClose())
-    //{
-    //    BeginDrawing();
-    //    ClearBackground(RAYWHITE);
-    //    int width = GetScreenWidth();
-    //    int height = GetScreenHeight();
-    //    DrawText(TextFormat("Width: %d", width), 20, 60, 20, BLACK);
-    //    DrawText(TextFormat("Height: %d", height), 20, 90, 20, BLACK);
-    //    EndDrawing();
-    //}
-    //CloseWindow();
-   
-    return 0;
-}
+ï»¿//#include "definitions.hpp"
+//#include "raylib.h"
+//#include "entity.hpp"
+//#include <chrono>
+//#include "segment.hpp"
+//#include <iostream>
+//int main(void)
+//{
+//    //// è®¾ç½®çª—å£ä¸ºå¯è°ƒæ•´å¤§å°
+//    //SetConfigFlags(FLAG_WINDOW_RESIZABLE);
+//    //// åˆå§‹åŒ–çª—å£
+//    //InitWindow(
+//    //    sdc::GM_WIN_INIT_WIDTH,
+//    //    sdc::GM_WIN_INIT_HEIGHT,    // è®¾ç½®çª—å£åˆå§‹å¤§å°
+//    //    "Space Debris Cleaner"      // çª—å£åç§°
+//    //);
+//    //// è®¾ç½®ç›®æ ‡FPS
+//    //SetTargetFPS(60);
+//    //// ä¸»å¾ªç¯
+//    //while (!WindowShouldClose())
+//    //{
+//    //    BeginDrawing();
+//    //    ClearBackground(RAYWHITE);
+//    //    int width = GetScreenWidth();
+//    //    int height = GetScreenHeight();
+//    //    DrawText(TextFormat("Width: %d", width), 20, 60, 20, BLACK);
+//    //    DrawText(TextFormat("Height: %d", height), 20, 90, 20, BLACK);
+//    //    EndDrawing();
+//    //}
+//    //CloseWindow();
+//    sdc::texture_manager tm;
+//    return 0;
+//}
