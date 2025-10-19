@@ -1,0 +1,84 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="源文件">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="头文件">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="资源文件">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="源文件\core">
+      <UniqueIdentifier>{ed1923dc-3f51-42af-90f9-6f02175f4ffe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core">
+      <UniqueIdentifier>{280eea38-3594-4448-be83-8b3aa1d8d48f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\utils">
+      <UniqueIdentifier>{0f0ad9b4-7d9e-4f5b-8414-803f7140e272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core\basic_ds">
+      <UniqueIdentifier>{9575ba2b-f436-4162-93f3-d1fb3a4ff3aa}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core\resource_manager">
+      <UniqueIdentifier>{4e3605f1-7636-419c-999a-cfcd0c3b8496}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
+    <ClCompile Include="math.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="entity.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="coord.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+    <ClCompile Include="segment.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="entity.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="coord.hpp">
+      <Filter>头文件\core\basic_ds</Filter>
+    </ClInclude>
+    <ClInclude Include="polygon.hpp">
+      <Filter>头文件\core\basic_ds</Filter>
+    </ClInclude>
+    <ClInclude Include="definitions.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="profiler.hpp">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.hpp">
+      <Filter>头文件\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="texture_manager.hpp">
+      <Filter>头文件\core\resource_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="audio_manager.hpp">
+      <Filter>头文件\core\resource_manager</Filter>
+    </ClInclude>
+    <ClInclude Include="math.hpp">
+      <Filter>头文件\core\basic_ds</Filter>
+    </ClInclude>
+    <ClInclude Include="segment.hpp">
+      <Filter>头文件\core\basic_ds</Filter>
+    </ClInclude>
+    <ClInclude Include="static_data_manager.hpp">
+      <Filter>头文件\core\resource_manager</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
