@@ -136,7 +136,6 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="audio_manager.hpp" />
-    <ClInclude Include="config_manager.hpp" />
     <ClInclude Include="coord.hpp" />
     <ClInclude Include="static_data_manager.hpp" />
     <ClInclude Include="definitions.hpp" />

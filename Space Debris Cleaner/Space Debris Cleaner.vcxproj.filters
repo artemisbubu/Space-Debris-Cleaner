@@ -86,9 +86,6 @@
     <ClInclude Include="static_data_manager.hpp">
       <Filter>头文件\core\resource_manager</Filter>
     </ClInclude>
-    <ClInclude Include="config_manager.hpp">
-      <Filter>头文件</Filter>
-    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="config.json">

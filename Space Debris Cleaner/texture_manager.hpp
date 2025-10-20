@@ -2,19 +2,38 @@
 #define TEXTURE_MANAGER_HPP
 
 #include "definitions.hpp"
+#include <iostream>
+#include <fstream>
 #include <raylib.h>
-#include "config_manager.hpp"
+#include <nlohmann/json.hpp>
+#include <string>
 
 namespace sdc {
 	class texture_manager {
 	public:
 		texture_manager(
-			const sdc::config_manager& cm	// 用于获取加载路径，无需关注加载逻辑
+			const std::string& config_path
 		):
 			_entity_texture(static_cast<int>(sdc::entity_type::SIZE)),
 			_scene_texture(static_cast<int>(sdc::scene_type::SIZE))
 		{
-			// ... 加载逻辑
+			nlohmann::json config;
+			std::ifstream file{ config_path };
+			file >> config;
+
+			// 检查配置文件结构
+			if (config.contains("resource_path") &&
+				config["resource_path"].contains("entity") &&
+				config["resource_path"]["entity"].is_array()
+			) {
+				std::cout << "遍历 entity 数组：" << std::endl;
+				for (auto& item : config["resource_path"]["entity"]) {
+					std::cout << "元素: " << item << std::endl;
+				}
+			}
+			else {
+				std::cout << "JSON 结构不符合预期！" << std::endl;
+			}
 		}
 
 		/** 
