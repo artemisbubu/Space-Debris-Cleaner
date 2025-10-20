@@ -30,7 +30,6 @@ namespace sdc {
 	private:
 		const std::vector<std::vector<sdc::polygon>> _cbox_coord;
 		const std::vector<sdc::coord> _texture_size;
-
 	};
 
 }

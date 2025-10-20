@@ -27,7 +27,7 @@ sdc::entity::entity(
 		for (auto& _coord : _collision_box) {
 			//_coord += this->get_left_up_coord();
 			_coord += this->_center_coord;
-			_coord -= (this->_texture_size * 0.5);
+			_coord -= (this->_texture_size * 0.5f);
 		}
 	}
 }
@@ -41,7 +41,7 @@ sdc::coord sdc::entity::get_center_coord() const noexcept {
 }
 
 sdc::coord sdc::entity::get_left_up_coord() const noexcept {
-	return (this->_center_coord - this->_texture_size * 0.5);
+	return (this->_center_coord - this->_texture_size * 0.5f);
 }
 
 sdc::coord sdc::entity::get_texture_size() const noexcept {
@@ -57,7 +57,34 @@ bool sdc::entity::is_collide(const sdc::entity& oth) const noexcept {
 }
 
 void sdc::entity::render() const {
+	// 获取纹理
+	const Texture2D& texture = this->_texture_manager.request(this->_entity_type);
+	
+	// 采样整张纹理
+	Rectangle source = { 0.0f, 0.0f, (float)texture.width, (float)texture.height };
+	
+	// 旋转中心
+	sdc::coord sdc_center = this->_center_coord;
+	Vector2 raylib_center = { sdc_center.x, sdc_center.y };
 
+	// 目标区域
+	sdc::coord sdc_texture_size = this->_texture_size;
+	Rectangle dest = {
+		sdc_center.x - 0.5f * sdc_texture_size.x,
+		sdc_center.y - 0.5f * sdc_texture_size.y,
+		static_cast<float>(texture.width),
+		static_cast<float>(texture.height)
+	};
+
+	// 渲染
+	DrawTexturePro(
+		texture,
+		source,
+		dest,
+		raylib_center,
+		this->_rotation_degree,     
+		WHITE
+	);
 }
 
 

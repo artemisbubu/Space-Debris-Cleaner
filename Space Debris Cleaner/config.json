@@ -1,8 +1,16 @@
 {
+  "rendering_setting": {
+    "fps": 60
+  },
   "resource_path": {
     "entity": [
-      "",
+      "./imgs/entity/stone_1.png",
+      "./imgs/entity/stone_2.png",
+      "./imgs/entity/stone_3.png"
+    ],
+    "scene": [
+      "./imgs/scene/background.png",
       ""
     ]
-  } 
+  }
 }

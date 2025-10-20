@@ -12,27 +12,32 @@ namespace sdc {
 	class texture_manager {
 	public:
 		texture_manager(
-			const std::string& config_path
+			const nlohmann::json& config
 		):
-			_entity_texture(static_cast<int>(sdc::entity_type::SIZE)),
-			_scene_texture(static_cast<int>(sdc::scene_type::SIZE))
+			_entity_texture(static_cast<size_t>(sdc::entity_type::size)),
+			_scene_texture(static_cast<size_t>(sdc::scene_type::size))
 		{
-			nlohmann::json config;
-			std::ifstream file{ config_path };
-			file >> config;
-
-			// 检查配置文件结构
-			if (config.contains("resource_path") &&
-				config["resource_path"].contains("entity") &&
-				config["resource_path"]["entity"].is_array()
-			) {
-				std::cout << "遍历 entity 数组：" << std::endl;
-				for (auto& item : config["resource_path"]["entity"]) {
-					std::cout << "元素: " << item << std::endl;
-				}
+			// 资源检查应该交给launcher来做，类内部不进行资源检查，默认config已经是合规的
+			for (size_t i = 0; i < static_cast<size_t>(sdc::entity_type::size); ++i) {
+				_entity_texture[i] = LoadTexture(
+					config["resource_path"]["entity"][i].get<std::string>().c_str()
+				);
 			}
-			else {
-				std::cout << "JSON 结构不符合预期！" << std::endl;
+
+			for (size_t i = 0; i < static_cast<size_t>(sdc::scene_type::size); ++i) {
+				_scene_texture[i] = LoadTexture(
+					config["resource_path"]["scene"][i].get<std::string>().c_str()
+				);
+			}
+		}
+
+		~texture_manager() {
+			for (Texture2D& tex : _entity_texture) {
+				UnloadTexture(tex);
+			}
+
+			for (Texture2D& tex : _scene_texture) {
+				UnloadTexture(tex);
 			}
 		}
 
@@ -43,7 +48,7 @@ namespace sdc {
 		* @note		const
 		*/
 		const Texture2D& request(const sdc::entity_type entity_type) const {
-
+			return _entity_texture[static_cast<size_t>(entity_type)];
 		}
 
 		/**
@@ -60,6 +65,8 @@ namespace sdc {
 		
 		/** @var 场景纹理 */
 		std::vector<Texture2D> _scene_texture;
+
+
 	};
 
 } 
