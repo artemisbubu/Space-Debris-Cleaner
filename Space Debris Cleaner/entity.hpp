@@ -1,25 +1,31 @@
 #ifndef ENTITY_HPP
 #define ENTITY_HPP
 
-#include "definitions.hpp"
 #include "coord.hpp"
 #include "polygon.hpp"
-#include "texture_manager.hpp"
-#include "static_data_manager.hpp"
+#include <vector>
+#include <raylib.h>
 
+/** @namespace sdc*/
 namespace sdc {
 
-	/**
-	* @class 实体类
-	*/
+	/** @enumclass 枚举实体类型 */
+	enum class entity_type {
+		stone_1,
+		stone_2,
+		stone_3,
+		size
+	};
+
+	/** @class 实体类 */
 	class entity {
 	public:
 		entity(
 			const sdc::entity_type entity_type,
 			const float initial_rotation_degree,
 			const sdc::coord initial_coord,
-			const sdc::texture_manager& texture_manager,
-			const sdc::static_data_manager& static_data_manager
+			const std::vector<sdc::polygon>& origin_collision_boxes,
+			const Texture2D& texture
 		);
 
 		/**
@@ -88,24 +94,25 @@ namespace sdc {
 		*/
 		void update(
 			const sdc::coord& new_center_coord,
-			const float new_rotation_degreee
+			const float new_rotation_degreee,
+			const float new_scaling_ratio = 1.0f
 		) noexcept;
 
 	protected:
-		/** @cvar 贴图管理器 */
-		const sdc::texture_manager& _texture_manager;
+		/** @cvar 实体类型 */
+		const sdc::entity_type _entity_type;
 
-		/** @cvar 静态数据管理器 */
-		const sdc::static_data_manager& _static_data_manager;
+		/** @cvar 材质（贴图坐标系） */
+		const Texture2D& _texture;
 
-		/** @var 实体类型 */
-		sdc::entity_type _entity_type;
-
-		/** @var 实体大小 */
-		sdc::coord _texture_size;
+		/** @cvar 原始碰撞盒坐标（贴图坐标系） */
+		const std::vector<sdc::polygon> _origin_collision_boxes;
 
 		/** @var 实体相对于竖直方向的顺时针旋转角度（角度） */
 		float _rotation_degree;
+
+		/** @var 材质大小 */
+		sdc::coord _texture_size;
 
 		/** @var 贴图中心位置 */
 		sdc::coord _center_coord;
@@ -113,6 +120,8 @@ namespace sdc {
 		/** @var 碰撞盒 */
 		std::vector<sdc::polygon> _collision_boxes;
 
+		/** @var 放缩比例*/
+		float _scaling_ratio;
 	};
 }
 

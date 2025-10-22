@@ -129,7 +129,9 @@
   <ItemGroup>
     <ClCompile Include="coord.cpp" />
     <ClCompile Include="entity.cpp" />
+    <ClCompile Include="logger.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="marco.cpp" />
     <ClCompile Include="math.cpp" />
     <ClCompile Include="segment.cpp" />
     <ClCompile Include="texture_manager.cpp" />
@@ -137,8 +139,10 @@
   <ItemGroup>
     <ClInclude Include="audio_manager.hpp" />
     <ClInclude Include="coord.hpp" />
-    <ClInclude Include="static_data_manager.hpp" />
-    <ClInclude Include="definitions.hpp" />
+    <ClInclude Include="global_setting.hpp" />
+    <ClInclude Include="launcher.hpp" />
+    <ClInclude Include="marco.hpp" />
+    <ClInclude Include="scene.hpp" />
     <ClInclude Include="entity.hpp" />
     <ClInclude Include="logger.hpp" />
     <ClInclude Include="math.hpp" />

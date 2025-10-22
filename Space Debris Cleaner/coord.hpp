@@ -1,6 +1,7 @@
 #ifndef COORD_HPP
 #define COORD_HPP
 
+/** @namespace sdc*/
 namespace sdc {
 	/**
 	* @class ×ø±êÀà

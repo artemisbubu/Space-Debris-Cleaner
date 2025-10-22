@@ -1,7 +1,7 @@
-#include "definitions.hpp"
+#include "polygon.hpp"
 #include "math.hpp"
 #include <cmath>
-
+#include <vector>
 // math
 
 bool sdc::math::is_intersected(

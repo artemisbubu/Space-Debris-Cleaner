@@ -19,9 +19,6 @@
     <Filter Include="头文件\core">
       <UniqueIdentifier>{280eea38-3594-4448-be83-8b3aa1d8d48f}</UniqueIdentifier>
     </Filter>
-    <Filter Include="头文件\utils">
-      <UniqueIdentifier>{0f0ad9b4-7d9e-4f5b-8414-803f7140e272}</UniqueIdentifier>
-    </Filter>
     <Filter Include="头文件\core\basic_ds">
       <UniqueIdentifier>{9575ba2b-f436-4162-93f3-d1fb3a4ff3aa}</UniqueIdentifier>
     </Filter>
@@ -30,6 +27,12 @@
     </Filter>
     <Filter Include="源文件\core\resource_manager">
       <UniqueIdentifier>{47999f7b-45c3-420a-a132-4c17f8484362}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="头文件\core\utils">
+      <UniqueIdentifier>{0f0ad9b4-7d9e-4f5b-8414-803f7140e272}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源文件\core\utils">
+      <UniqueIdentifier>{a41dc358-4a94-488b-bdeb-2b9dc9960937}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -51,6 +54,12 @@
     <ClCompile Include="texture_manager.cpp">
       <Filter>源文件\core\resource_manager</Filter>
     </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>源文件\core\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="marco.cpp">
+      <Filter>源文件\core</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="entity.hpp">
@@ -62,14 +71,11 @@
     <ClInclude Include="polygon.hpp">
       <Filter>头文件\core\basic_ds</Filter>
     </ClInclude>
-    <ClInclude Include="definitions.hpp">
-      <Filter>头文件\core</Filter>
-    </ClInclude>
     <ClInclude Include="profiler.hpp">
-      <Filter>头文件\utils</Filter>
+      <Filter>头文件\core\utils</Filter>
     </ClInclude>
     <ClInclude Include="logger.hpp">
-      <Filter>头文件\utils</Filter>
+      <Filter>头文件\core\utils</Filter>
     </ClInclude>
     <ClInclude Include="texture_manager.hpp">
       <Filter>头文件\core\resource_manager</Filter>
@@ -83,8 +89,17 @@
     <ClInclude Include="segment.hpp">
       <Filter>头文件\core\basic_ds</Filter>
     </ClInclude>
-    <ClInclude Include="static_data_manager.hpp">
-      <Filter>头文件\core\resource_manager</Filter>
+    <ClInclude Include="launcher.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="global_setting.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="scene.hpp">
+      <Filter>头文件\core</Filter>
+    </ClInclude>
+    <ClInclude Include="marco.hpp">
+      <Filter>头文件\core</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

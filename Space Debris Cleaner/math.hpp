@@ -1,7 +1,6 @@
 #ifndef MATH_HPP
 #define MATH_HPP
 
-#include "definitions.hpp"
 #include "coord.hpp"
 #include "polygon.hpp"
 #include "segment.hpp"
@@ -9,8 +8,12 @@
 
 #include <cmath>
 
+/** @namespace sdc*/
 namespace sdc {
+
+	/** @namespace math*/
 	namespace math {
+
 		/** @cvar 圆周率值*/
 		const float PI_VAL = 3.1415927f;
 
@@ -21,10 +24,10 @@ namespace sdc {
 		constexpr float DEG_180 = 180.0f;
 
 		/**
-		* @brief	绕center旋转point点rotation度（角度），得到的point'坐标
+		* @brief	绕中心坐标旋转点
 		* @input	const sdc::coord center	中心坐标
 		*			const sdc::coord point	旋转的点坐标
-		*			const float	rotation	旋转角度
+		*			const float	rotation_degree	旋转角度
 		* @return	sdc::coord 旋转结果
 		* @note		inline; noexcept;
 		*/
@@ -49,27 +52,64 @@ namespace sdc {
 
 
 		/**
-		* @brief	绕center旋转point点rotation度（角度），得到的point'坐标
+		* @brief	绕中心坐标旋转多边形
 		* @input	sdc::coord center	中心坐标
-		*			const std::vector<sdc::coord>& point_s	旋转的点坐标
-		*			const float	rotation	旋转角度
+		*			sdc::polygon& polygon 多边形
+		*			const float	rotation_degree	旋转角度
 		* @return	void
 		* @note		inline; noexcept;
 		*/
 		inline void rotate(
 			const sdc::coord center,
 			sdc::polygon& polygon,
-			const float rotation
+			const float rotation_degree
 		) noexcept {
-			const float rad = rotation * sdc::math::PI_VAL / sdc::math::DEG_180;
+			const float rad = rotation_degree * sdc::math::PI_VAL / sdc::math::DEG_180;
 			const float cos_r = std::cos(rad);
 			const float sin_r = std::sin(rad);
-
+			
 			for (sdc::coord& coord : polygon) {
-				const float dx = coord.x - center.x;
-				const float dy = coord.y - center.y;
-				coord.x = center.x + dx * cos_r - dy * sin_r;
-				coord.y = center.y + dx * sin_r + dy * cos_r;
+				const sdc::coord delta = coord - center;
+				coord.x = center.x + delta.x * cos_r - delta.y * sin_r;
+				coord.y = center.y + delta.x * sin_r + delta.y * cos_r;
+			}
+		}
+		
+		/**
+		* @brief	据中心坐标放缩
+		* @input	sdc::coord center	中心坐标
+		*			sdc::coord point	点
+		*			const float	scaling_ratio 放缩比例
+		* @return	void
+		* @note		inline; noexcept;
+		*/
+		inline void scale(
+			const sdc::coord center,
+			sdc::coord point,
+			const float scaling_ratio
+		) noexcept {
+			point -= center;
+			point *= scaling_ratio;
+			point += center;
+		}
+
+		/**
+		* @brief	据中心坐标放缩
+		* @input	sdc::coord center	中心坐标
+		*			sdc::polygon& polygon 多边形 
+		*			const float	scaling_ratio 放缩比例
+		* @return	void
+		* @note		inline; noexcept;
+		*/
+		inline void scale(
+			const sdc::coord center,
+			sdc::polygon& polygon,
+			const float scaling_ratio
+		) noexcept {
+			for (auto& point : polygon) {
+				point -= center;
+				point *= scaling_ratio;
+				point += center;
 			}
 		}
 

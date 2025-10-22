@@ -1,11 +1,14 @@
 #ifndef SEGMENT_HPP
 #define SEGMENT_HPP
-#include "definitions.hpp"
 #include "coord.hpp"
 
+/** @namespace sdc*/
 namespace sdc {
+
+	/** @class segment */
 	class segment {
 	public:
+
 		/**
 		* @brief	默认构造函数
 		* @input	void

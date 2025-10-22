@@ -1,13 +1,13 @@
 #ifndef POLYGON_HPP
 #define POLYGON_HPP
-#include "definitions.hpp"
-#include "coord.hpp"
 
+#include "coord.hpp"
+#include <vector>
+
+/** @namespace sdc*/
 namespace sdc {
 
-	/**
-	* @class 采样近似多边形
-	*/
+	/** @class 采样近似多边形 */
 	class polygon {
 	public:
 		/**
